@@ -47,7 +47,7 @@ var config = {
       { test: /\.jsx$/, exclude: /(node_modules)/, loaders: ['react-hot', 'babel-loader'] },
       { test: /\.module\.less$/, loader: 'style?sourceMap!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!less?sourceMap' },
       { test: /^((?!module).)*\.less$/, loader: 'style!css!less' },
-      { test: /\.json$/, loader: 'json' }
+      { test: /\.json$/, loader: 'json-loader' }
     ]
   },
   plugins: [
@@ -58,7 +58,10 @@ var config = {
   resolve: { fallback: path.join(__dirname, 'node_modules') },
   resolveLoader: { fallback: path.join(__dirname, 'node_modules') },
   node: {
-    fs: 'empty'
+    fs: 'empty',
+    // console: 'empty',
+    net: 'empty',
+    tls: 'empty'
   }
 };
 
