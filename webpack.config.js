@@ -58,6 +58,9 @@ var config = {
   resolve: { fallback: path.join(__dirname, 'node_modules') },
   resolveLoader: { fallback: path.join(__dirname, 'node_modules') },
   node: {
+    console: true,
+    net: 'empty',
+    tls: 'empty',
     fs: 'empty'
   }
 };
